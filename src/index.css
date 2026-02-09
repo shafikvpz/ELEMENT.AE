@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-swat-black text-white overflow-x-hidden font-sans selection:bg-fire-500 selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-tactical uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3), inset 0 0 10px rgba(255, 69, 0, 0.1);
+  }
+
+  .glass-panel {
+    @apply bg-swat-gray/80 backdrop-blur-md border border-white/10;
+  }
+
+  /* Logo Styles */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-square {
+    background-color: #ff4500;
+    /* Matching project's fire-500 */
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.4;
+      transform: scale(0.9);
+    }
+  }
+
+  .logo-square:nth-child(1) {
+    animation: blink 3s infinite ease-in-out;
+  }
+
+  .logo-square:nth-child(2) {
+    animation: blink 3s infinite ease-in-out 0.5s;
+  }
+
+  .logo-square:nth-child(3) {
+    animation: blink 3s infinite ease-in-out 1s;
+  }
+
+  .logo-square:nth-child(4) {
+    animation: blink 3s infinite ease-in-out 1.5s;
+  }
+
+  .logo-main {
+    @apply font-tactical text-xl md:text-2xl;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .logo-sub {
+    @apply font-sans text-[0.6rem];
+    letter-spacing: 4px;
+    color: #9ca3af;
+    /* gray-400 */
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+}
